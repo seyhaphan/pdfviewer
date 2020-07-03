@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+import Viewer, { Worker } from '@phuocng/react-pdf-viewer';
+class App extends Component {
+  render() {
+    return (
+      <div style={{ width: '50%', margin: '0 auto' }}>
+        <Worker
+          workerUrl="https://unpkg.com/pdfjs-dist@2.4.456/build/pdf.worker.min.js"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <div
+            style={{
+              height: '700px',
+            }}
+          >
+            <Viewer fileUrl="http://localhost:8080/image/23d02bba-2845-448b-852b-4fc77bcfbcc4.pdf" />
+          </div>
+        </Worker>
+
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css';
 
 ReactDOM.render(
   <React.StrictMode>
